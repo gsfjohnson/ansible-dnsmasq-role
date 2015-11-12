@@ -1,2 +1,7 @@
 ---
 
+- name: svc restart dnsmasq
+  service:
+    name={{dnsmasq_svc_name}}
+    state=restarted
+

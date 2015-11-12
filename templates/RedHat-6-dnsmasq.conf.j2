@@ -532,4 +532,8 @@
 
 # Include a another lot of configuration options.
 #conf-file=/etc/dnsmasq.more.conf
+{% if dnsmasq_conf_dir is defined %}
+conf-dir={{dnsmasq_conf_dir}}
+{% else %}
 #conf-dir=/etc/dnsmasq.d
+{% endif %}

@@ -1,5 +1,12 @@
 ---
 
+dnsmasq_pkg_state: installed
+dnsmasq_pkg_name: dnsmasq
+
+dnsmasq_svc_name: dnsmasq
+dnsmasq_svc_state: started
+dnsmasq_svc_enabled: True
+
 dnsmasq_tftp: False
 dnsmasq_tftp_root: /var/lib/tftpboot
 
