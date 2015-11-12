@@ -1,0 +1,5 @@
+---
+
+dnsmasq_tftp: False
+dnsmasq_tftp_root: /var/lib/tftpboot
+

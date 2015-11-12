@@ -1,0 +1,25 @@
+---
+
+- name: Install dnsmasq package
+  yum:
+    name=dnsmasq
+    state={{dnsmasq_pkg_state}}
+
+- name: template dnsmasq.conf
+  template:
+    src=dnsmasq-{{ansible_os_family}}-{{ansible_distribution_major_version}}.conf.j2
+    dest=/etc/dnsmasq.conf
+    owner=root
+    group=root
+    mode=0644
+  notify: svc restart dnsmasq
+
+- name: Make sure TFTP root directory exists
+  file:
+    path={{ dnsmasq_tftp_root }}
+    state=directory
+    owner=root
+    group=root
+    mode=0755
+  when: dnsmasq_tftp is defined and dnsmasq_tftp
+
